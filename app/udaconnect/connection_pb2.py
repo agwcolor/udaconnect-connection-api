@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x10\x63onnection.proto\"5\n\x11\x43onnectionMessage\x12\x10\n\x08location\x18\x01 \x01(\t\x12\x0e\n\x06person\x18\x02 \x01(\t\"\x07\n\x05\x45mpty\"@\n\x15\x43onnectionMessageList\x12\'\n\x0b\x63onnections\x18\x01 \x03(\x0b\x32\x12.ConnectionMessage2l\n\x11\x43onnectionService\x12\x30\n\x06\x43reate\x12\x12.ConnectionMessage\x1a\x12.ConnectionMessage\x12%\n\x03Get\x12\x06.Empty\x1a\x16.ConnectionMessageListb\x06proto3'
+  serialized_pb=b'\n\x10\x63onnection.proto\"\\\n\x11\x43onnectionMessage\x12\x11\n\tperson_id\x18\x01 \x01(\x05\x12\x12\n\nstart_date\x18\x02 \x01(\t\x12\x10\n\x08\x65nd_date\x18\x03 \x01(\t\x12\x0e\n\x06meters\x18\x04 \x01(\x05\"\x07\n\x05\x45mpty\"@\n\x15\x43onnectionMessageList\x12\'\n\x0b\x63onnections\x18\x01 \x03(\x0b\x32\x12.ConnectionMessage2l\n\x11\x43onnectionService\x12\x30\n\x06\x43reate\x12\x12.ConnectionMessage\x1a\x12.ConnectionMessage\x12%\n\x03Get\x12\x06.Empty\x1a\x16.ConnectionMessageListb\x06proto3'
 )
 
 
@@ -34,16 +34,30 @@ _CONNECTIONMESSAGE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='location', full_name='ConnectionMessage.location', index=0,
-      number=1, type=9, cpp_type=9, label=1,
+      name='person_id', full_name='ConnectionMessage.person_id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='start_date', full_name='ConnectionMessage.start_date', index=1,
+      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='person', full_name='ConnectionMessage.person', index=1,
-      number=2, type=9, cpp_type=9, label=1,
+      name='end_date', full_name='ConnectionMessage.end_date', index=2,
+      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='meters', full_name='ConnectionMessage.meters', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -60,7 +74,7 @@ _CONNECTIONMESSAGE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=20,
-  serialized_end=73,
+  serialized_end=112,
 )
 
 
@@ -84,8 +98,8 @@ _EMPTY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=75,
-  serialized_end=82,
+  serialized_start=114,
+  serialized_end=121,
 )
 
 
@@ -116,8 +130,8 @@ _CONNECTIONMESSAGELIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=84,
-  serialized_end=148,
+  serialized_start=123,
+  serialized_end=187,
 )
 
 _CONNECTIONMESSAGELIST.fields_by_name['connections'].message_type = _CONNECTIONMESSAGE
@@ -156,8 +170,8 @@ _CONNECTIONSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=150,
-  serialized_end=258,
+  serialized_start=189,
+  serialized_end=297,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',

@@ -17,5 +17,6 @@ item = connection_pb2.ConnectionMessage(
     end_date="2020-12-30",
         meters=5,
 )
-response = stub.Create(connection)  #pass connection to Create method
-feature = stub.GetFeature(point)
+# response = stub.Create(connection)  #pass connection to Create method
+# feature = stub.GetFeature(item)
+print(item)

@@ -27,7 +27,7 @@ api = Namespace("UdaConnect", description="Connections via geolocation.")  # noq
 @api.param("distance", "Proximity to a given user in meters", _in="query")
 class ConnectionDataResource(Resource, connection_pb2_grpc.ConnectionServiceServicer):
     @responds(schema=ConnectionSchema, many=True)
-    def get(self, person_id) -> ConnectionSchema:
+    def get(self, request, context, person_id) -> ConnectionSchema:
         start_date: datetime = datetime.strptime(
             request.args["start_date"], DATE_FORMAT
         )
@@ -40,7 +40,6 @@ class ConnectionDataResource(Resource, connection_pb2_grpc.ConnectionServiceServ
             end_date=end_date,
             meters=distance,
         )
-    
         print(results, "These are the results returned from gRPC call to ConnectionService")
         return results
 

@@ -1,9 +1,10 @@
 syntax = "proto3";
 
 message ConnectionMessage {
-
- string location = 1;
- string person = 2;
+ int32 person_id =1;
+ string start_date = 2;
+ string end_date = 3;
+ int32 meters = 4;
 
 }
 
